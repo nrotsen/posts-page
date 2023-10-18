@@ -1,0 +1,37 @@
+.postPage-container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.post-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 700px;
+  padding-top: 50px;
+}
+
+.post-title {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.subtitles-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 20px;
+}
+
+.img-post {
+  height: 400px;
+  width: 100%;
+}
+
+.sub-title {
+  color: grey;
+  font-size: 25px;
+}

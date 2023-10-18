@@ -1,0 +1,19 @@
+.styledInputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 90%;
+}
+
+.labelInput {
+  color: grey;
+  font-weight: bold;
+}
+
+.inputStyle {
+  max-height: 60px;
+}
+
+.charsStyle {
+  color: grey;
+}

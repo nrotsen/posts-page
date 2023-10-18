@@ -1,0 +1,31 @@
+.navBar {
+  display: flex;
+  background-color: beige;
+  height: 56px;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  margin-left: 30px;
+}
+
+.create-post,
+.dashboard {
+  display: flex;
+  margin-right: 50px;
+  font-size: 20px;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.link-item {
+  text-decoration: none;
+  color: black;
+}
+
+.options {
+  display: flex;
+}
