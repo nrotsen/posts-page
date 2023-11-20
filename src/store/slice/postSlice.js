@@ -13,7 +13,8 @@ export const postSlice = createSlice({
         title: action.payload.title,
         subtitle: action.payload.subtitle,
         category: action.payload.category,
-        date: action.payload.date,
+        date: action.payload.date.toISOString(),
+        file: action.payload.file,
         text: action.payload.text,
       });
     },

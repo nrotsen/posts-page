@@ -45,3 +45,7 @@
 .iconDropDown {
   font-size: 25px;
 }
+
+.create-post-img {
+  max-width: 200px;
+}

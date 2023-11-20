@@ -89,7 +89,28 @@ export const StyledInput = ({
           {label === "Date" && (
             <>
               <span className="labelInput">{label}</span>
-              <input type="date" name="date" />
+              <input
+                type="date"
+                name="date"
+                onChange={(e) =>
+                  onHandleData(e.target.value, label.toLowerCase())
+                }
+              />
+            </>
+          )}
+          {label === "File" && (
+            <>
+              <span className="labelInput">{label}</span>
+              <input
+                type="file"
+                name="image"
+                onChange={(e) => {
+                  onHandleData(
+                    URL.createObjectURL(e.target.files[0]),
+                    label.toLowerCase()
+                  );
+                }}
+              />
             </>
           )}
           {label === "Primary" && (
@@ -98,7 +119,7 @@ export const StyledInput = ({
               <textarea
                 className="inputStyle"
                 type="text"
-                name="input"
+                name="primary"
                 onChange={(e) =>
                   onHandleData(e.target.value, label.toLowerCase())
                 }
@@ -114,7 +135,7 @@ export const StyledInput = ({
               <textarea
                 className="inputStyle"
                 type="text"
-                name="input"
+                name="secondary"
                 onChange={(e) =>
                   onHandleData(e.target.value, label.toLowerCase())
                 }

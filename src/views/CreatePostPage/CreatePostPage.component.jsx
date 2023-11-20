@@ -43,7 +43,7 @@ export const CreatePostPage = () => {
             maxCharacters="150 characters max"
           />
           <DropInput
-            buttonText="images"
+            buttonText="Images"
             icon={<BsImages className="iconDropDown" />}
             postData={postData}
             setPostData={setPostData}
@@ -63,15 +63,14 @@ export const CreatePostPage = () => {
                 <h2 className="sub-title">{postData.subtitle}</h2>
               </div>
               <div className="subtitles-container">
-                <span>{postData.date}</span>
+                <span>{postData.date.split("-").reverse().join("-")}</span>
               </div>
               <div className="img-post-wrapper">
                 <img className="create-post-img" src={postData.file} />
-                <p>{postData.text}</p>
+                <span>{postData.primary}</span>
               </div>
               <div className="bodytexts">
-                <span>{postData.textPrimary}</span>
-                <span>{postData.textSecondary}</span>
+                <span>{postData.secondary}</span>
               </div>
             </div>
           </div>

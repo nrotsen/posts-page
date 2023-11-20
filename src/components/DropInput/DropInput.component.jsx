@@ -48,7 +48,11 @@ export const DropInput = ({
                 postData={postData}
                 setPostData={setPostData}
               />
-              <StyledInput label="Date" />
+              <StyledInput
+                label="Date"
+                postData={postData}
+                setPostData={setPostData}
+              />
             </>
           )}
           {buttonText === "Body" && (
@@ -57,14 +61,26 @@ export const DropInput = ({
               <StyledInput
                 label="Primary"
                 maxCharacters="160 characters maximum"
+                postData={postData}
+                setPostData={setPostData}
               />
               <StyledInput
                 label="Secondary"
                 maxCharacters="160 characters maximum"
+                postData={postData}
+                setPostData={setPostData}
               />
             </>
           )}
-          {buttonText === "images" && <input type="file" />}
+          {buttonText === "Images" && (
+            <>
+              <StyledInput
+                label="File"
+                postData={postData}
+                setPostData={setPostData}
+              />
+            </>
+          )}
         </div>
       )}
     </div>
