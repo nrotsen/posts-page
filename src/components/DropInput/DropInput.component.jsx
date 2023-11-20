@@ -1,18 +1,25 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/Md";
-import PropTypes from "prop-types";
 import { useState } from "react";
 import { StyledInput } from "../StyledInput/StyledInput.component";
 
 import "./DropInput.styles.css";
+import { useEffect } from "react";
+import { FORM_DATA } from "../../utils/formData";
 
-export const DropInput = ({
-  buttonText = "Press",
-  icon,
-  title,
-  postData,
-  setPostData,
-}) => {
+export const DropInput = ({ icon, title }) => {
   const [selectedDropDown, setSelectedDropDown] = useState(false);
+  const [formInputs, setFormInputs] = useState([]);
+
+  const filterFormDataBySection = () => {
+    const filteredArray = FORM_DATA.filter((input) => input.section === title);
+    return filteredArray;
+  };
+
+  useEffect(() => {
+    setFormInputs(filterFormDataBySection());
+  }, []);
 
   return (
     <div className="dropInputWrapper">
@@ -22,75 +29,23 @@ export const DropInput = ({
       >
         <div className="icon-text-container">
           {icon && icon}
-          <span>{buttonText}</span>
+          <span>{title}</span>
         </div>
-        {selectedDropDown ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
+        {selectedDropDown ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
       </div>
+
       {selectedDropDown && (
         <div className="dropContentWrapper">
-          {buttonText === "Title, subtitle, category" && (
-            <>
+          {formInputs?.length &&
+            formInputs.map((input, index) => (
               <StyledInput
-                label="Title"
-                maxCharacters="50 characters maximum"
-                postData={postData}
-                setPostData={setPostData}
+                key={index}
+                label={input.label}
+                maxCharacters={input.maxCharacters}
               />
-              <StyledInput
-                label="Subtitle"
-                maxCharacters="70 characters maximum"
-                postData={postData}
-                setPostData={setPostData}
-              />
-              <StyledInput
-                label="Category"
-                maxCharacters="20 characters maximum"
-                postData={postData}
-                setPostData={setPostData}
-              />
-              <StyledInput
-                label="Date"
-                postData={postData}
-                setPostData={setPostData}
-              />
-            </>
-          )}
-          {buttonText === "Body" && (
-            <>
-              <span className="contentTitle">{title}</span>
-              <StyledInput
-                label="Primary"
-                maxCharacters="160 characters maximum"
-                postData={postData}
-                setPostData={setPostData}
-              />
-              <StyledInput
-                label="Secondary"
-                maxCharacters="160 characters maximum"
-                postData={postData}
-                setPostData={setPostData}
-              />
-            </>
-          )}
-          {buttonText === "Images" && (
-            <>
-              <StyledInput
-                label="File"
-                postData={postData}
-                setPostData={setPostData}
-              />
-            </>
-          )}
+            ))}
         </div>
       )}
     </div>
   );
-};
-
-DropInput.propTypes = {
-  buttonText: PropTypes.string,
-  icon: PropTypes.element,
-  title: PropTypes.string,
-  postData: PropTypes.object,
-  setPostData: PropTypes.func,
 };

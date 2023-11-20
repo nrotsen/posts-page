@@ -4,3 +4,4 @@ export * from "./NavBar/NavBar.component";
 export * from "./PostCard/PostCard.component";
 export * from "./Posts/Posts.component";
 export * from "./StyledInput/StyledInput.component";
+export * from "./CreatePostForm/CreatePostForm.component";
