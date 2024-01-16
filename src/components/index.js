@@ -5,3 +5,6 @@ export * from "./PostCard/PostCard.component";
 export * from "./Posts/Posts.component";
 export * from "./StyledInput/StyledInput.component";
 export * from "./CreatePostForm/CreatePostForm.component";
+export * from "./ImageInput/ImageInput.component";
+export * from "./PostAndClearButtons/PostAndClearButtons.component";
+export * from "./Preview/Preview.component";

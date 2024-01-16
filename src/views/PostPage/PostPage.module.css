@@ -1,11 +1,11 @@
-.postPage-container {
+.container {
   display: flex;
   align-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.post-wrapper {
+.containerPost {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,24 +14,24 @@
   padding-top: 50px;
 }
 
-.post-title {
+.postTitle {
   font-size: 50px;
   font-weight: bolder;
 }
 
-.subtitles-container {
+.postDate {
   display: flex;
   justify-content: center;
   gap: 40px;
   font-size: 20px;
 }
 
-.img-post {
+.postImg {
   height: 400px;
   width: 100%;
 }
 
-.sub-title {
+.postSubtitle {
   color: grey;
   font-size: 25px;
 }

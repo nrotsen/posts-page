@@ -1,4 +1,4 @@
-.navBar {
+.container {
   display: flex;
   background-color: beige;
   height: 56px;
@@ -11,7 +11,7 @@
   margin-left: 30px;
 }
 
-.create-post,
+.createPost,
 .dashboard {
   display: flex;
   margin-right: 50px;
@@ -21,11 +21,11 @@
   cursor: pointer;
 }
 
-.link-item {
+.linkItem {
   text-decoration: none;
   color: black;
 }
 
-.options {
+.containerOptions {
   display: flex;
 }

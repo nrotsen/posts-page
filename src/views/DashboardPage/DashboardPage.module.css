@@ -1,0 +1,11 @@
+.containerDashboard {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.containerPostCards {
+  display: flex;
+  justify-content: center;
+}

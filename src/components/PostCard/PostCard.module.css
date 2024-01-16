@@ -6,12 +6,12 @@
   border-radius: 5px;
 }
 
-.card-img-container {
+.cardImgContainer {
   max-width: 200px;
   max-height: 100px;
 }
 
-.card-img {
+.cardImg {
   max-width: 200px;
   max-height: 100px;
 }

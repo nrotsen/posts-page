@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-import "./PostCard.style.css";
+import styles from "./PostCard.module.css";
 
 export const PostCard = ({ id, title, date, category, image }) => {
   return (
-    <div className="card">
+    <div className={styles.card}>
       <table>
         <thead>
           <tr>
@@ -19,8 +19,12 @@ export const PostCard = ({ id, title, date, category, image }) => {
         <tbody>
           <tr>
             <td>{id}</td>
-            <td className="card-img-container">
-              <img className="card-img" src={`/${image}`} alt="td-image" />
+            <td className={styles.cardImgContainer}>
+              <img
+                className={styles.cardImg}
+                src={`/${image}`}
+                alt="td-image"
+              />
             </td>
             <td>{title}</td>
             <td>{category}</td>

@@ -3,12 +3,17 @@
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/Md";
 import { useState } from "react";
 import { StyledInput } from "../StyledInput/StyledInput.component";
-
-import "./DropInput.styles.css";
 import { useEffect } from "react";
 import { FORM_DATA } from "../../utils/formData";
+import styles from "./DropInput.module.css";
 
-export const DropInput = ({ icon, title }) => {
+export const DropInput = ({
+  icon,
+  title,
+  setImgPost,
+  imgPost,
+  setImgPreview,
+}) => {
   const [selectedDropDown, setSelectedDropDown] = useState(false);
   const [formInputs, setFormInputs] = useState([]);
 
@@ -22,26 +27,30 @@ export const DropInput = ({ icon, title }) => {
   }, []);
 
   return (
-    <div className="dropInputWrapper">
+    <div className={styles.container}>
       <div
-        className="dropDownbutton"
+        className={styles.dropDownButton}
         onClick={() => setSelectedDropDown((prev) => !prev)}
       >
-        <div className="icon-text-container">
+        <div className={styles.iconTextContainer}>
           {icon && icon}
           <span>{title}</span>
         </div>
-        {selectedDropDown ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+        {selectedDropDown ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
       </div>
 
       {selectedDropDown && (
-        <div className="dropContentWrapper">
+        <div className={styles.dropContentWrapper}>
           {formInputs?.length &&
             formInputs.map((input, index) => (
               <StyledInput
                 key={index}
                 label={input.label}
                 maxCharacters={input.maxCharacters}
+                type={input.type}
+                setImgPost={setImgPost}
+                setImgPreview={setImgPreview}
+                imgPost={imgPost}
               />
             ))}
         </div>

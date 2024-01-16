@@ -1,8 +1,8 @@
-.dropInputWrapper {
+.container {
   width: 100%;
 }
 
-.dropDownbutton {
+.dropDownButton {
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -14,16 +14,7 @@
   cursor: pointer;
 }
 
-.dropDownContent {
-  display: flex;
-  background-color: white;
-  border: 1px solid lightslategray;
-  border-radius: 5px;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.icon-text-container {
+.iconTextContainer {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -31,4 +22,5 @@
 
 .dropContentWrapper {
   border: 1px solid lightslategray;
+  padding: 15px;
 }

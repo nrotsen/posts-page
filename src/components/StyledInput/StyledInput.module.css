@@ -1,19 +1,20 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
   width: 90%;
 }
 
-.container-label {
-  color: grey;
+.containerLabel {
+  color: black;
   font-weight: bold;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
-.container-input {
+.containerInput {
   max-height: 60px;
 }
 
-.container-max {
+.containerMax {
   color: grey;
 }

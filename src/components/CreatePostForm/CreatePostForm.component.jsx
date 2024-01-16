@@ -1,16 +1,23 @@
 /* eslint-disable react/prop-types */
 import { DropInput } from "../DropInput/DropInput.component";
 import { FORM_DATA_SECTIONS } from "../../utils/formData";
+import { PostAndClearButtons } from "../PostAndClearButtons/PostAndClearButtons.component";
+import styles from "./CreatePostForm.module.css";
 
-export const CreatePostForm = () => {
+export const CreatePostForm = ({ setImgPost, imgPost, setImgPreview }) => {
   return (
-    <div>
-      <div className="buttons-post">
-        <button>Post</button>
-        <button>Clear all</button>
-      </div>
+    <div className={styles.container}>
+      <PostAndClearButtons imgPost={imgPost} />
+
       {FORM_DATA_SECTIONS.map((section, index) => (
-        <DropInput key={index} title={section.title} icon={section.icon} />
+        <DropInput
+          key={index}
+          title={section.title}
+          icon={section.icon}
+          setImgPost={setImgPost}
+          setImgPreview={setImgPreview}
+          imgPost={imgPost}
+        />
       ))}
     </div>
   );

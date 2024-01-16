@@ -1,23 +1,23 @@
 import { Link } from "react-router-dom";
-import "./NavBar.style.css";
 import { BsPencilSquare } from "react-icons/Bs";
 import { GrUserSettings } from "react-icons/Gr";
+import styles from "./NavBar.module.css";
 
 export const NavBar = () => {
   return (
-    <div className="navBar">
-      <Link className="link-item" to={"/"}>
-        <h2 className="brand">The Controvertial Post</h2>
+    <div className={styles.container}>
+      <Link className={styles.linkItem} to={"/"}>
+        <h2 className={styles.brand}>The Controvertial Post</h2>
       </Link>
-      <div className="options">
-        <Link className="link-item" to={"/createPost"}>
-          <div className="create-post">
+      <div className={styles.containerOptions}>
+        <Link className={styles.linkItem} to={"/createPost"}>
+          <div className={styles.createPost}>
             <span>Write</span>
             <BsPencilSquare />
           </div>
         </Link>
-        <Link className="link-item" to={"/dashboard"}>
-          <div className="dashboard">
+        <Link className={styles.linkItem} to={"/dashboard"}>
+          <div className={styles.dashboard}>
             <span>Dashboard</span>
             <GrUserSettings />
           </div>
